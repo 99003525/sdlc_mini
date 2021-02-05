@@ -1,7 +1,8 @@
 #include<stdio.h>
+#include "factorial.h"
 
 int getN();
-void factorial(int num );
+int factorial(int num );
 int result;
 
 int main()
@@ -12,9 +13,9 @@ int main()
     {
         printf("factorial of entered number is 1");
     }
-    else if ( N>999)
+    else if (N>11)
     {
-        printf("please enter number betwenn 0 to 999 ");
+        printf("please enter a number between 0 to 11");
     }
     else{
         result=N;
@@ -23,13 +24,15 @@ int main()
     }
     
 }
-void factorial(int num )
+int factorial( int num )
 {
     num--;
     if (num==0)
-        return;
-    result*=num;
-    factorial(num);
+        return 1;
+    else
+        result*=num;
+        factorial(num);
+        return result;
 }
 
 int getN()
@@ -45,3 +48,4 @@ int getN()
     }while(num<0);
     return num;
 }
+
